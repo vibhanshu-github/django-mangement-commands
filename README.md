@@ -3,7 +3,7 @@ Some additional django management commands to help you develop faster and effort
 
 ## Prerequisite
 Python 3.4+ (any version should work)
-django 1.11+ (may also work on some lower versions)
+django 1.11 (may also work on some lower versions)
 
 ## Installation
 step 1: clone this project.
