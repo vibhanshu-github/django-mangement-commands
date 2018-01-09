@@ -13,7 +13,7 @@ class Command(BaseCommand):
 
         import os
         BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-        FILE_PATH = os.path.join(BASE_DIR,BASE_DIR.split('/')[-1]+'/settings.py')
+        FILE_PATH = os.path.join(BASE_DIR,os.path.split(BASE_DIR)[-1],'settings.py')
         with open(FILE_PATH, "r") as f:
             contents = f.readlines()
 
@@ -32,7 +32,7 @@ class Command(BaseCommand):
                             with open(FILE_PATH, "w") as fo:
                                 fo.write("".join(contents))
                             raise CommandError("'%s' app does not exist" % app)
-                        
+
                         del contents[i+j]
                         with open(FILE_PATH, "w") as fo:
                             fo.write("".join(contents))
